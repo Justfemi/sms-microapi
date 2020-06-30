@@ -1,6 +1,6 @@
 from .views import sendmessage, translateMessages,  nuobj_api, CreateUser, ListUser, VerifyAccount #sendmessage_infobip, get_recipients_ibp
 from django.urls import path
-from .views import create_receipents_details, get_recipient_details, save_recipients_details, sms_list
+from .views import create_receipents_details, get_recipient_details, save_recipients_details, sms_list, SendSms
 from rest_framework.schemas.coreapi import AutoSchema
 from rest_framework_swagger.views import get_swagger_view
 from rest_framework import permissions
@@ -34,6 +34,7 @@ urlpatterns = [
     path('user/list', ListUser.as_view(), name="userlist"),
     path("v1/register/", CreateUser.as_view(), name="register"),
     path("v1/verify/", VerifyAccount.as_view(), name="register"),
+    path("v1/SendSms/", SendSms.as_view(), name="sendSms"),
     path('sms/', sendmessage),
     path('v1/sms/recipient/create', create_receipents_details),
     path('v1/sms/recipient/save', save_recipients_details),

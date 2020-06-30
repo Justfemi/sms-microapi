@@ -172,5 +172,6 @@ STATICFILES_DIRS = (
 
 # Twilio credentials and phone number
 TWILIO_ACCOUNT_SID='AC296fa803ff255fb99eefac30eb1df72d' # obtained from twilio.com/console
-TWILIO_AUTH_TOKEN='4eb428211d6ae606b737e2f10670bb5a' # also obtained from twilio.com/console
-TWILIO_NUMBER='+17177460412' # use the number you received when signing up or buy a new number
+TWILIO_AUTH_TOKEN='4eb428211d6ae606b737e2f10670bb5a' # also obtained from twilio.com/console 
+TWILIO_NUMBER='+17177460412' # use the number you received when signing up or buy a new number 
+TWILIO_NUMBER_TO='+2349032983949' #the number of the message recipient

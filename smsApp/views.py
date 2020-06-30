@@ -376,3 +376,24 @@ def nuobj_api(request):
         data = {'user': 'demo', 'pass': 'pass', 'to': recipient, 'from': 'Testing', 'msg': message}
         response = requests.post('https://cloud.nuobjects.com/api/send/', data=data)
     return HttpResponse("Messages Sent!", 200)
+
+class SendSms(views.APIView):
+    """This enables writing sms"""
+
+    def post(self, request):
+        #try:
+            #body = request.data["body"]
+            #phone = request.data["phone"]
+                
+            client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
+
+            message = client.messages.create(body= "Thanks for using this service",
+            to = settings.TWILIO_NUMBER_TO,
+            from_=settings.TWILIO_NUMBER)
+
+            return Response("messages sent!", 200)
+            return message
+        #except:
+             #return Response({"details":"Invalid credentials"}, status=status.HTTP_400_BAD_REQUEST)
+
+    
